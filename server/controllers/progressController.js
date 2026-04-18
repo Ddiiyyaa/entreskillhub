@@ -5,6 +5,7 @@ exports.getUserProgress = async (req, res) => {
     const progress = await Progress.find({ user: req.user.id })
       .populate('businessIdea')
       .populate('roadmap');
+
     res.status(200).json(progress);
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
@@ -32,6 +33,7 @@ exports.startProgress = async (req, res) => {
     });
 
     await progress.save();
+
     res.status(201).json({
       message: 'Progress started successfully',
       progress
@@ -82,6 +84,7 @@ exports.toggleBookmark = async (req, res) => {
         businessIdea: req.params.ideaId,
         bookmarked: true
       });
+
       await newProgress.save();
       return res.status(201).json({ message: 'Bookmarked successfully' });
     }
@@ -104,6 +107,7 @@ exports.getBookmarks = async (req, res) => {
       user: req.user.id,
       bookmarked: true
     }).populate('businessIdea');
+
     res.status(200).json(bookmarks);
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
