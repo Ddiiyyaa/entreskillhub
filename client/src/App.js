@@ -16,7 +16,7 @@ import Profile from './pages/Profile';
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) return <div>Loading...</div>;
-  return user ? children : <Navigate to="/login" />;
+  return user ? children : <Navigate to="/" />;
 };
 
 function AppRoutes() {
