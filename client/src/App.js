@@ -12,11 +12,21 @@ import Ideas from './pages/Ideas';
 import RoadmapPage from './pages/RoadmapPage';
 import Mentors from './pages/Mentors';
 import Profile from './pages/Profile';
+import AdminDashboard from './pages/AdminDashboard'; // ✅ NEW
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) return <div>Loading...</div>;
   return user ? children : <Navigate to="/" />;
+};
+
+// ✅ NEW — Only lets admins through
+const AdminRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+  if (loading) return <div>Loading...</div>;
+  if (!user) return <Navigate to="/login" />;
+  if (user.role !== 'admin') return <Navigate to="/dashboard" />;
+  return children;
 };
 
 function AppRoutes() {
@@ -31,6 +41,7 @@ function AppRoutes() {
       <Route path="/roadmap/:ideaId" element={<PrivateRoute><RoadmapPage /></PrivateRoute>} />
       <Route path="/mentors" element={<PrivateRoute><Mentors /></PrivateRoute>} />
       <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+      <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} /> {/* ✅ NEW */}
     </Routes>
   );
 }
