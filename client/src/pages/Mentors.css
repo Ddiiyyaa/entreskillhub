@@ -1,0 +1,277 @@
+/* ==================== Mentors Page ==================== */
+
+.mentors-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Header */
+.mentors-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.mentors-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+.mentors-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Filters */
+.mentors-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1.1rem;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input:focus {
+  border-color: #6c63ff;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1.5px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  color: #333;
+}
+.chip:hover,
+.chip.active {
+  background: #6c63ff;
+  border-color: #6c63ff;
+  color: #fff;
+}
+
+.avail-select {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #ddd;
+  font-size: 0.9rem;
+  color: #333;
+  outline: none;
+  width: fit-content;
+}
+
+/* Count */
+.mentors-count {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid */
+.mentors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.mentor-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.mentor-card:hover {
+  box-shadow: 0 6px 24px rgba(108, 99, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.7rem;
+  background: #fff3cd;
+  color: #856404;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Avatar */
+.mentor-avatar-wrap {
+  position: relative;
+  width: fit-content;
+}
+.mentor-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e8e8ff;
+}
+.mentor-avatar-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6c63ff, #4e4ae8);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.availability-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
+.availability-dot.available { background: #28a745; }
+.availability-dot.busy      { background: #ffc107; }
+.availability-dot.unavailable { background: #dc3545; }
+
+/* Text */
+.mentor-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+.mentor-industry {
+  font-size: 0.85rem;
+  color: #6c63ff;
+  font-weight: 600;
+  margin: 0;
+}
+.mentor-experience {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+}
+.mentor-bio {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Tags */
+.mentor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+}
+.mentor-tag {
+  font-size: 0.75rem;
+  background: #f0efff;
+  color: #6c63ff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+}
+
+/* Footer */
+.mentor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid #f0f0f0;
+}
+.mentor-rating {
+  font-size: 0.82rem;
+  color: #f5a623;
+}
+.mentor-rating span {
+  color: #888;
+}
+.free-badge {
+  background: #d4edda;
+  color: #155724;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Connect button */
+.connect-btn {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 0.6rem;
+  background: #6c63ff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.connect-btn:hover {
+  background: #5a52d5;
+}
+
+/* Loading / Error / Empty states */
+.mentors-loading,
+.mentors-error,
+.mentors-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #666;
+}
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #e8e8ff;
+  border-top: 4px solid #6c63ff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto 1rem;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.mentors-error button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .mentors-header h1 { font-size: 1.7rem; }
+  .mentors-grid { grid-template-columns: 1fr; }
+}
